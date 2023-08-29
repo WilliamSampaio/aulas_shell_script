@@ -1,4 +1,6 @@
-# 1. Shebang
+# Hello World
+
+## 1. Shebang
 
 A shebang é usada para determinar qual interpretador deve ser usado para executar o script. Deve
 ser utilizada sempre na primeira linha do script, e começar com "#!" seguido do path do executável.
@@ -8,7 +10,7 @@ Ex:
 * #!/usr/bin/perl (para perl script)
 * #!/usr/bin/python3 (para python script)
 
-# 2. Path absoluto Vs. Path dinâmico
+## 2. Path absoluto Vs. Path dinâmico
 
 Ao utilizar o path absoluto do interpretador bash na shebang do script poderá ocorrer error ao
 tentar executar em outras distribuições GNU/Linux devido as configurações que variam de sistema
@@ -21,9 +23,9 @@ Ex:
 * #!/usr/bin/env bash (Procura e executa o script com o bash independentemente do seu path)
 * #!/usr/bin/env python (...)
 
-# 3. Criar primeiro script
+## 3. Criar primeiro script
 
-## Passo 0
+### Passo 0
 
 Primeiramente verifique se o bash existe no seu Linux, utilizando o comando "which". Basta executar: which bash. O comando deve retornar o path do bash caso ele exista.
 
@@ -31,7 +33,7 @@ Primeiramente verifique se o bash existe no seu Linux, utilizando o comando "whi
 which bash
 ```
 
-## Passo 1
+### Passo 1
 
 Utilize o editar de texto de sua preferência, por exemplo vim, nano, gedit, vscode. Utilizarei o vim.
 
@@ -41,7 +43,7 @@ vim helloworld
 
 **Obs.:** Não é obrigatório informar a extensão do arquivo "*.sh*" ou ".bash"
 
-## Passo 2
+### Passo 2
 
 Inicie o script com a shebang e em seguida escreva o código abaixo:
 
@@ -51,7 +53,7 @@ Inicie o script com a shebang e em seguida escreva o código abaixo:
 echo -e "Hello,\n$USER!"
 ```
 
-## Passo 3
+### Passo 3
 
 Após escrever e salvar o script é necessário dar permissão de execução para ele, para isso utilize o comando "chmod +x" seguido do path ou nome do seu script.
 
@@ -61,24 +63,24 @@ chmod +x helloworld
 
 Para verificar se agora seu script pode ser executado utilize o comando "ls -l"
 
-## Passo 4
+### Passo 4
 
 Pronto! basta executar seu script!
 
-### Caso o script esteja no mesmo diretório que seu terminal
+#### Caso o script esteja no mesmo diretório que seu terminal
 
 ```bash
 ./helloworld
 ```
 
-### Caso esteja em outra pasta (opção 1)
+#### Caso esteja em outra pasta (opção 1)
 
 ```bash
 cd caminho/para/o/script
 ./helloworld
 ```
 
-### Caso esteja em outra pasta (opção 2)
+#### Caso esteja em outra pasta (opção 2)
 
 ```bash
 caminho/para/o/script/helloworld
@@ -94,7 +96,7 @@ William
 **Obs.:** No meu caso foi retornado "William" porque é meu nome de usuário, no seu caso será o seu
 nome de usuário.
 
-## Passo 5
+### Passo 5
 
 Vamos analisar linha a linha o nosso script helloworld.
 
