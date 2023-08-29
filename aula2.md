@@ -89,3 +89,55 @@ Para desalocar uma variável utilize o comando "unset":
 ```bash
 unset nome
 ```
+
+## Variáveis Read Only
+
+O valor de uma variável declarada pode ser facilmente alterada apenas redeclarando ela com um novo valor. Mas também existe a possibilidade de tornar uma variável imutável. Utiliza-se o comando "declare" com a opção "-r" seguido do nome da variável.
+Ex:
+
+```bash
+declare -r nome_var
+declare -r nome_var="valor"
+```
+
+Também é possível utilizar o comando readonly. Ex:
+
+```bash
+readonly nome_var
+readonly nome_var="valor"
+```
+
+**Obs.:** O escope da variável de somente-leitura ainda é local e não global, para torna-la global utiliza-se o comando "export" conforme explicado acima.
+
+## Executar comandos em subshell
+
+Para executar comandos e armazenar o resultado em variáveis utiliza-se as sintaxes "$()" ou "``". É util para guardar o STDOUT de comandos em variáveis.  
+Ex:
+
+```bash
+result=$(ls -l)
+echo $result
+
+result=`ls -l`
+echo $result
+```
+
+## Capturar entrada padrão (STDIN)
+
+Quando precisamos guardar valores inseridos pelo usuário utilizamos o comando "read".
+Ex:
+
+```bash
+echo "Digite seu nome:"; read nome
+echo "Nome: $nome"
+
+# Observe que o comando read guarda na variável nome o valor informado pelo usuário.
+```
+
+O comando read possui varias opções, uma muito interessante é o "-p", que permite informar um texto antes de solicitar a entrada.
+Ex:
+
+```bash
+read -p "Digite sua idade: " idade
+echo "Sua idade é $idade"
+```
